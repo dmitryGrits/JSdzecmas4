@@ -9,13 +9,13 @@ const getData = async () => {
         console.log(error.message);
     }
 }
-// localStorage.clear();
+localStorage.clear();
 const result = await getData();
 console.log(result);
 
 const ulEl = document.querySelector('ul');
 const savedUsers = JSON.parse(localStorage.getItem('user')) || [];
-
+const h3El = document.querySelector('h3');
 
 result.forEach(element => {
     savedUsers.push(JSON.stringify(element));
@@ -24,3 +24,27 @@ result.forEach(element => {
     liEl.textContent = element.name;
     ulEl.appendChild(liEl);
 });
+
+
+// const inputEl = document.querySelector('#task_input');
+
+// const deleteUser = (text) => {
+//     // const text = inputEl.value;
+//     savedUsers.forEach(user => {
+//         let arrEl = JSON.parse(localStorage.getItem('user'));
+//         console.log(arrEl);
+
+//         // if (user.id === text) {
+//         //     // localStorage.removeItem('user');
+//         //     console.log(user);
+//         // } else {
+//         //     h3El.textContent = 'Такого пользователя не существует'
+//         // }
+//     });
+// };
+
+// deleteUser('2')
+
+
+
+
